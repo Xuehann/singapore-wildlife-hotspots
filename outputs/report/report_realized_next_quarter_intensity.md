@@ -1,6 +1,6 @@
 # Future Wildlife Presence Hotspots Under Realized Environment
 
-![Future Wildlife Presence Intensity](/Users/xuehan/Downloads/Wildlife/outputs/report/figure_realized_next_quarter_intensity.png)
+![Future Wildlife Presence Intensity](outputs/report/figure_realized_next_quarter_intensity.png)
 
 ## Figure Caption
 **Figure X. Predicted next-quarter wildlife presence hotspots under the realized-environment model for monkeys and otters in Singapore.**  
