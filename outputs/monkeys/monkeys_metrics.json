@@ -1,0 +1,596 @@
+{
+  "species": "monkeys",
+  "analysis_unit": "500m_hex_by_quarter",
+  "primary_model_basis": "realized",
+  "scenario_model_basis": "realized_plus_planned",
+  "primary_forecast_horizon": "next_quarter",
+  "secondary_forecast_horizon": "next_year",
+  "n_hexes": 1492,
+  "n_quarters": 91,
+  "n_observations": 2025,
+  "positive_hex_quarters": 1940,
+  "environment_models": {
+    "realized": {
+      "next_quarter": {
+        "environment_basis": "realized",
+        "forecast_horizon": "next_quarter",
+        "target_definition": "target_next_quarter_intensity",
+        "forecast_target_period": "2026-03-01",
+        "feature_columns": [
+          "observation_count",
+          "dist_to_road_m",
+          "dist_to_waterway_m",
+          "dist_to_parkconnector_m",
+          "road_length_m_in_buffer",
+          "road_density_km_per_km2",
+          "waterway_length_m_in_buffer",
+          "waterway_density_km_per_km2",
+          "park_reserve_share",
+          "building_share",
+          "population_weighted_density",
+          "in_park_reserve",
+          "park_connector_access",
+          "road_access",
+          "waterway_access",
+          "human_pressure_score",
+          "realized_monkey_context_score",
+          "realized_otter_context_score",
+          "quarter_num",
+          "year",
+          "year_index",
+          "quarter_sin",
+          "quarter_cos",
+          "season_index",
+          "realized_species_context_score",
+          "intensity_lag_1_quarter",
+          "intensity_lag_2_quarters_sum",
+          "intensity_lag_4_quarters_sum",
+          "neighbor_intensity_lag_1_quarter",
+          "species_kernel_recent_intensity"
+        ],
+        "model_results": {
+          "random_forest": {
+            "intensity_metrics": {
+              "mae": 0.07254518618430728,
+              "rmse": 0.20797738380708833,
+              "rank_correlation": 0.13774108149850803,
+              "n_backtest_periods": 32,
+              "backtest_period_start": "2018-01-01",
+              "backtest_period_end": "2025-10-01"
+            },
+            "hotspot_metrics": {
+              "top_5_percent_capture_rate": 0.12440944881889764,
+              "top_10_percent_capture_rate": 0.2335958005249344,
+              "top_10_percent_mean_actual_intensity": 0.09319371727748692
+            }
+          },
+          "poisson_regression": {
+            "intensity_metrics": {
+              "mae": 0.07343970601548261,
+              "rmse": 0.20316464652082228,
+              "rank_correlation": 0.15563846134495057,
+              "n_backtest_periods": 32,
+              "backtest_period_start": "2018-01-01",
+              "backtest_period_end": "2025-10-01"
+            },
+            "hotspot_metrics": {
+              "top_5_percent_capture_rate": 0.15905511811023623,
+              "top_10_percent_capture_rate": 0.28766404199475065,
+              "top_10_percent_mean_actual_intensity": 0.11476439790575917
+            },
+            "selected_for_forecast": true,
+            "final_model_explanation": {
+              "top_positive_coefficients": {
+                "year": 0.7971966999979209,
+                "year_index": 0.7971966999979065,
+                "road_access": 0.24455489903042202,
+                "park_reserve_share": 0.12334784355780296,
+                "species_kernel_recent_intensity": 0.11469481608546948,
+                "road_length_m_in_buffer": 0.11400988992698437,
+                "road_density_km_per_km2": 0.11400988992698423,
+                "waterway_access": 0.09602963744628557,
+                "realized_otter_context_score": 0.05279652470124087,
+                "season_index": 0.051288818637002895,
+                "quarter_num": 0.05128881863700287,
+                "intensity_lag_4_quarters_sum": 0.046333537344738995,
+                "building_share": 0.02945138238255696,
+                "quarter_sin": 0.02506733461521014,
+                "intensity_lag_2_quarters_sum": 0.0165057011553717,
+                "human_pressure_score": 0.01408749453716648,
+                "neighbor_intensity_lag_1_quarter": 0.00047920796290080927,
+                "observation_count": -0.007628854805719458,
+                "population_weighted_density": -0.013804308706846362,
+                "park_connector_access": -0.01471713804803375
+              },
+              "top_negative_coefficients": {
+                "quarter_cos": -0.13833123417132667,
+                "dist_to_road_m": -0.11264340076678586,
+                "dist_to_parkconnector_m": -0.08906751280327432,
+                "dist_to_waterway_m": -0.048992985532417106,
+                "intensity_lag_1_quarter": -0.04700605841840057,
+                "waterway_density_km_per_km2": -0.040570680410159016,
+                "waterway_length_m_in_buffer": -0.04057068041015899,
+                "in_park_reserve": -0.019615537327240695,
+                "realized_species_context_score": -0.018776244684460874,
+                "realized_monkey_context_score": -0.018776244684460874,
+                "park_connector_access": -0.01471713804803375,
+                "population_weighted_density": -0.013804308706846362,
+                "observation_count": -0.007628854805719458,
+                "neighbor_intensity_lag_1_quarter": 0.00047920796290080927,
+                "human_pressure_score": 0.01408749453716648,
+                "intensity_lag_2_quarters_sum": 0.0165057011553717,
+                "quarter_sin": 0.02506733461521014,
+                "building_share": 0.02945138238255696,
+                "intensity_lag_4_quarters_sum": 0.046333537344738995,
+                "quarter_num": 0.05128881863700287
+              }
+            }
+          }
+        },
+        "recommended_model": "poisson_regression",
+        "comparison_summary": {
+          "best_by_top_10_percent_capture_rate": "poisson_regression",
+          "best_by_rank_correlation": "poisson_regression",
+          "best_by_rmse": "poisson_regression",
+          "recommended_model": "poisson_regression"
+        },
+        "output_files": {
+          "gpkg": "monkeys_realized_next_quarter_intensity.gpkg",
+          "csv": "monkeys_realized_next_quarter_intensity.csv",
+          "png": "monkeys_realized_next_quarter_intensity.png"
+        }
+      },
+      "next_year": {
+        "environment_basis": "realized",
+        "forecast_horizon": "next_year",
+        "target_definition": "target_next_year_intensity",
+        "forecast_target_period": "2026-03-01",
+        "feature_columns": [
+          "observation_count",
+          "dist_to_road_m",
+          "dist_to_waterway_m",
+          "dist_to_parkconnector_m",
+          "road_length_m_in_buffer",
+          "road_density_km_per_km2",
+          "waterway_length_m_in_buffer",
+          "waterway_density_km_per_km2",
+          "park_reserve_share",
+          "building_share",
+          "population_weighted_density",
+          "in_park_reserve",
+          "park_connector_access",
+          "road_access",
+          "waterway_access",
+          "human_pressure_score",
+          "realized_monkey_context_score",
+          "realized_otter_context_score",
+          "quarter_num",
+          "year",
+          "year_index",
+          "quarter_sin",
+          "quarter_cos",
+          "season_index",
+          "realized_species_context_score",
+          "intensity_lag_1_quarter",
+          "intensity_lag_2_quarters_sum",
+          "intensity_lag_4_quarters_sum",
+          "neighbor_intensity_lag_1_quarter",
+          "species_kernel_recent_intensity"
+        ],
+        "model_results": {
+          "random_forest": {
+            "intensity_metrics": {
+              "mae": 0.17979570853111937,
+              "rmse": 0.3663738198733307,
+              "rank_correlation": 0.4501970874561099,
+              "n_backtest_periods": 29,
+              "backtest_period_start": "2018-01-01",
+              "backtest_period_end": "2025-01-01"
+            },
+            "hotspot_metrics": {
+              "top_5_percent_capture_rate": 0.27867203219315895,
+              "top_10_percent_capture_rate": 0.4553032480597873,
+              "top_10_percent_mean_actual_intensity": 0.7321469840536168
+            },
+            "selected_for_forecast": true,
+            "final_model_explanation": {
+              "feature_importance_top20": {
+                "year_index": 0.11013192555145343,
+                "year": 0.10979076538943532,
+                "species_kernel_recent_intensity": 0.060745830789434775,
+                "road_density_km_per_km2": 0.045197668483617934,
+                "road_length_m_in_buffer": 0.04440689244893165,
+                "human_pressure_score": 0.04116515961168033,
+                "building_share": 0.040903398175811075,
+                "dist_to_road_m": 0.04023627459874544,
+                "road_access": 0.04015725737182038,
+                "waterway_access": 0.03828674873096306,
+                "dist_to_waterway_m": 0.03818291504363996,
+                "realized_otter_context_score": 0.03696912559166635,
+                "realized_monkey_context_score": 0.036668915915229965,
+                "realized_species_context_score": 0.03662797997385738,
+                "park_connector_access": 0.036371633316888134,
+                "dist_to_parkconnector_m": 0.036119397773900774,
+                "population_weighted_density": 0.027982631993739352,
+                "waterway_density_km_per_km2": 0.024054788228959685,
+                "waterway_length_m_in_buffer": 0.0235833871857948,
+                "intensity_lag_4_quarters_sum": 0.019975975714926545
+              }
+            }
+          },
+          "poisson_regression": {
+            "intensity_metrics": {
+              "mae": 0.2503702007758375,
+              "rmse": 0.4209846123443255,
+              "rank_correlation": 0.2930450169877208,
+              "n_backtest_periods": 29,
+              "backtest_period_start": "2018-01-01",
+              "backtest_period_end": "2025-01-01"
+            },
+            "hotspot_metrics": {
+              "top_5_percent_capture_rate": 0.15521701638401839,
+              "top_10_percent_capture_rate": 0.28212129922391493,
+              "top_10_percent_mean_actual_intensity": 0.4536630459902935
+            }
+          }
+        },
+        "recommended_model": "random_forest",
+        "comparison_summary": {
+          "best_by_top_10_percent_capture_rate": "random_forest",
+          "best_by_rank_correlation": "random_forest",
+          "best_by_rmse": "random_forest",
+          "recommended_model": "random_forest"
+        },
+        "output_files": {
+          "gpkg": "monkeys_realized_next_year_intensity.gpkg",
+          "csv": "monkeys_realized_next_year_intensity.csv",
+          "png": "monkeys_realized_next_year_intensity.png"
+        }
+      }
+    },
+    "planned": {
+      "next_quarter": {
+        "environment_basis": "planned",
+        "forecast_horizon": "next_quarter",
+        "target_definition": "target_next_quarter_intensity",
+        "forecast_target_period": "2026-03-01",
+        "feature_columns": [
+          "observation_count",
+          "dist_to_road_m",
+          "dist_to_waterway_m",
+          "dist_to_parkconnector_m",
+          "road_length_m_in_buffer",
+          "road_density_km_per_km2",
+          "waterway_length_m_in_buffer",
+          "waterway_density_km_per_km2",
+          "park_reserve_share",
+          "building_share",
+          "population_weighted_density",
+          "in_park_reserve",
+          "park_connector_access",
+          "road_access",
+          "waterway_access",
+          "human_pressure_score",
+          "realized_monkey_context_score",
+          "realized_otter_context_score",
+          "dominant_landuse",
+          "dominant_landuse_share",
+          "lu_share_business_2",
+          "lu_share_educational_institution",
+          "lu_share_open_space",
+          "lu_share_other",
+          "lu_share_park",
+          "lu_share_port_airport",
+          "lu_share_reserve_site",
+          "lu_share_residential",
+          "lu_share_road",
+          "lu_share_special_use",
+          "lu_share_sports_recreation",
+          "lu_share_utility",
+          "lu_share_waterbody",
+          "green_landuse_share",
+          "water_landuse_share",
+          "road_landuse_share",
+          "planned_monkey_context_score",
+          "planned_otter_context_score",
+          "quarter_num",
+          "year",
+          "year_index",
+          "quarter_sin",
+          "quarter_cos",
+          "season_index",
+          "realized_species_context_score",
+          "planned_species_context_score",
+          "intensity_lag_1_quarter",
+          "intensity_lag_2_quarters_sum",
+          "intensity_lag_4_quarters_sum",
+          "neighbor_intensity_lag_1_quarter",
+          "species_kernel_recent_intensity"
+        ],
+        "model_results": {
+          "random_forest": {
+            "intensity_metrics": {
+              "mae": 0.07047028628878901,
+              "rmse": 0.20811619775470558,
+              "rank_correlation": 0.1395101920610212,
+              "n_backtest_periods": 32,
+              "backtest_period_start": "2018-01-01",
+              "backtest_period_end": "2025-10-01"
+            },
+            "hotspot_metrics": {
+              "top_5_percent_capture_rate": 0.12493438320209974,
+              "top_10_percent_capture_rate": 0.23412073490813648,
+              "top_10_percent_mean_actual_intensity": 0.09340314136125655
+            }
+          },
+          "poisson_regression": {
+            "intensity_metrics": {
+              "mae": 0.07310951396501797,
+              "rmse": 0.20323500515548293,
+              "rank_correlation": 0.1573775831462355,
+              "n_backtest_periods": 32,
+              "backtest_period_start": "2018-01-01",
+              "backtest_period_end": "2025-10-01"
+            },
+            "hotspot_metrics": {
+              "top_5_percent_capture_rate": 0.15065616797900264,
+              "top_10_percent_capture_rate": 0.2929133858267717,
+              "top_10_percent_mean_actual_intensity": 0.11685863874345549
+            },
+            "selected_for_forecast": true,
+            "final_model_explanation": {
+              "top_positive_coefficients": {
+                "year": 0.8007693212733301,
+                "year_index": 0.80076932127332,
+                "road_access": 0.26232837474517057,
+                "park_reserve_share": 0.13749263450392307,
+                "species_kernel_recent_intensity": 0.10982928169304816,
+                "lu_share_port_airport": 0.09728387786787633,
+                "lu_share_sports_recreation": 0.0953836753597924,
+                "planned_otter_context_score": 0.07411015564588656,
+                "waterway_access": 0.06987031759186764,
+                "road_density_km_per_km2": 0.06910575197513112,
+                "road_length_m_in_buffer": 0.06910575197513105,
+                "lu_share_road": 0.06644840662683536,
+                "road_landuse_share": 0.06644840662683534,
+                "season_index": 0.05948137430097444,
+                "quarter_num": 0.05948137430097442,
+                "dominant_landuse_BUSINESS 2": 0.05113530301062022,
+                "lu_share_residential": 0.04355116991024333,
+                "intensity_lag_4_quarters_sum": 0.04324415614518835,
+                "quarter_sin": 0.039018294430295475,
+                "realized_otter_context_score": 0.028158822795707708
+              },
+              "top_negative_coefficients": {
+                "quarter_cos": -0.148933097428883,
+                "dist_to_parkconnector_m": -0.11822735707144016,
+                "dist_to_road_m": -0.11626055192597887,
+                "dominant_landuse_AGRICULTURE": -0.06502692437240482,
+                "lu_share_special_use": -0.06453219658339246,
+                "lu_share_park": -0.05649611400148519,
+                "waterway_density_km_per_km2": -0.05452075448315578,
+                "waterway_length_m_in_buffer": -0.05452075448315573,
+                "dominant_landuse_HOTEL": -0.04817138023671754,
+                "lu_share_open_space": -0.04804627412413206,
+                "intensity_lag_1_quarter": -0.04542941267819352,
+                "green_landuse_share": -0.04081730484319514,
+                "lu_share_business_2": -0.040194775102972556,
+                "dominant_landuse_BUSINESS PARK": -0.03902422042324164,
+                "dominant_landuse_SPORTS & RECREATION": -0.03410996937949805,
+                "dominant_landuse_0.0": -0.028002168528233982,
+                "dist_to_waterway_m": -0.027853723214956737,
+                "dominant_landuse_RESIDENTIAL": -0.025414944364745912,
+                "lu_share_reserve_site": -0.02342598925981658,
+                "dominant_landuse_CEMETERY": -0.021679230840428606
+              }
+            }
+          }
+        },
+        "recommended_model": "poisson_regression",
+        "comparison_summary": {
+          "best_by_top_10_percent_capture_rate": "poisson_regression",
+          "best_by_rank_correlation": "poisson_regression",
+          "best_by_rmse": "poisson_regression",
+          "recommended_model": "poisson_regression"
+        },
+        "output_files": {
+          "gpkg": "monkeys_planned_next_quarter_intensity.gpkg",
+          "csv": "monkeys_planned_next_quarter_intensity.csv",
+          "png": "monkeys_planned_next_quarter_intensity.png"
+        }
+      },
+      "next_year": {
+        "environment_basis": "planned",
+        "forecast_horizon": "next_year",
+        "target_definition": "target_next_year_intensity",
+        "forecast_target_period": "2026-03-01",
+        "feature_columns": [
+          "observation_count",
+          "dist_to_road_m",
+          "dist_to_waterway_m",
+          "dist_to_parkconnector_m",
+          "road_length_m_in_buffer",
+          "road_density_km_per_km2",
+          "waterway_length_m_in_buffer",
+          "waterway_density_km_per_km2",
+          "park_reserve_share",
+          "building_share",
+          "population_weighted_density",
+          "in_park_reserve",
+          "park_connector_access",
+          "road_access",
+          "waterway_access",
+          "human_pressure_score",
+          "realized_monkey_context_score",
+          "realized_otter_context_score",
+          "dominant_landuse",
+          "dominant_landuse_share",
+          "lu_share_business_2",
+          "lu_share_educational_institution",
+          "lu_share_open_space",
+          "lu_share_other",
+          "lu_share_park",
+          "lu_share_port_airport",
+          "lu_share_reserve_site",
+          "lu_share_residential",
+          "lu_share_road",
+          "lu_share_special_use",
+          "lu_share_sports_recreation",
+          "lu_share_utility",
+          "lu_share_waterbody",
+          "green_landuse_share",
+          "water_landuse_share",
+          "road_landuse_share",
+          "planned_monkey_context_score",
+          "planned_otter_context_score",
+          "quarter_num",
+          "year",
+          "year_index",
+          "quarter_sin",
+          "quarter_cos",
+          "season_index",
+          "realized_species_context_score",
+          "planned_species_context_score",
+          "intensity_lag_1_quarter",
+          "intensity_lag_2_quarters_sum",
+          "intensity_lag_4_quarters_sum",
+          "neighbor_intensity_lag_1_quarter",
+          "species_kernel_recent_intensity"
+        ],
+        "model_results": {
+          "random_forest": {
+            "intensity_metrics": {
+              "mae": 0.17800783796625871,
+              "rmse": 0.3710872884713527,
+              "rank_correlation": 0.446148848503614,
+              "n_backtest_periods": 29,
+              "backtest_period_start": "2018-01-01",
+              "backtest_period_end": "2025-01-01"
+            },
+            "hotspot_metrics": {
+              "top_5_percent_capture_rate": 0.2680367921816614,
+              "top_10_percent_capture_rate": 0.4396378269617706,
+              "top_10_percent_mean_actual_intensity": 0.7069563207765195
+            },
+            "selected_for_forecast": true,
+            "final_model_explanation": {
+              "feature_importance_top20": {
+                "year": 0.12965125668973837,
+                "year_index": 0.12818153276265984,
+                "species_kernel_recent_intensity": 0.0573290161265442,
+                "road_length_m_in_buffer": 0.023224604776523022,
+                "road_density_km_per_km2": 0.022700917988598548,
+                "human_pressure_score": 0.02089792142981814,
+                "dist_to_road_m": 0.02085149184245931,
+                "building_share": 0.02045358129212368,
+                "intensity_lag_4_quarters_sum": 0.020453472362016566,
+                "road_access": 0.020421313951110638,
+                "waterway_access": 0.019317040028051867,
+                "dist_to_waterway_m": 0.01931289059517561,
+                "planned_otter_context_score": 0.019121666158520467,
+                "dist_to_parkconnector_m": 0.018892043433120724,
+                "planned_monkey_context_score": 0.01876489841755675,
+                "park_connector_access": 0.01860081236185178,
+                "planned_species_context_score": 0.018585612473093198,
+                "realized_species_context_score": 0.018504686354102996,
+                "realized_otter_context_score": 0.018433770172464864,
+                "realized_monkey_context_score": 0.017951919258868614
+              }
+            }
+          },
+          "poisson_regression": {
+            "intensity_metrics": {
+              "mae": 0.24788378942570302,
+              "rmse": 0.42089487132399583,
+              "rank_correlation": 0.3006674131234877,
+              "n_backtest_periods": 29,
+              "backtest_period_start": "2018-01-01",
+              "backtest_period_end": "2025-01-01"
+            },
+            "hotspot_metrics": {
+              "top_5_percent_capture_rate": 0.15449841908594425,
+              "top_10_percent_capture_rate": 0.28413337165852254,
+              "top_10_percent_mean_actual_intensity": 0.456898544025884
+            }
+          }
+        },
+        "recommended_model": "random_forest",
+        "comparison_summary": {
+          "best_by_top_10_percent_capture_rate": "random_forest",
+          "best_by_rank_correlation": "random_forest",
+          "best_by_rmse": "random_forest",
+          "recommended_model": "random_forest"
+        },
+        "output_files": {
+          "gpkg": "monkeys_planned_next_year_intensity.gpkg",
+          "csv": "monkeys_planned_next_year_intensity.csv",
+          "png": "monkeys_planned_next_year_intensity.png"
+        }
+      }
+    }
+  },
+  "scenario_comparison": {
+    "next_quarter": {
+      "intensity_correlation": 0.9576201704117837,
+      "hotspot_overlap_jaccard": 0.7142857142857143,
+      "mean_intensity_delta_planned_minus_realized": -0.0004947100736718129
+    },
+    "next_year": {
+      "intensity_correlation": 0.9859096975692184,
+      "hotspot_overlap_jaccard": 0.8404907975460123,
+      "mean_intensity_delta_planned_minus_realized": -0.008810531986329008
+    }
+  },
+  "quarterly_observations_head": [
+    {
+      "hex_id": "hex_00001",
+      "quarter": "2025-10-01",
+      "observation_count": 1
+    },
+    {
+      "hex_id": "hex_00006",
+      "quarter": "2015-10-01",
+      "observation_count": 1
+    },
+    {
+      "hex_id": "hex_00007",
+      "quarter": "2025-01-01",
+      "observation_count": 1
+    },
+    {
+      "hex_id": "hex_00007",
+      "quarter": "2025-04-01",
+      "observation_count": 1
+    },
+    {
+      "hex_id": "hex_00009",
+      "quarter": "2019-04-01",
+      "observation_count": 1
+    },
+    {
+      "hex_id": "hex_00009",
+      "quarter": "2025-04-01",
+      "observation_count": 1
+    },
+    {
+      "hex_id": "hex_00011",
+      "quarter": "2023-07-01",
+      "observation_count": 1
+    },
+    {
+      "hex_id": "hex_00016",
+      "quarter": "2021-01-01",
+      "observation_count": 1
+    },
+    {
+      "hex_id": "hex_00019",
+      "quarter": "2020-10-01",
+      "observation_count": 1
+    },
+    {
+      "hex_id": "hex_00019",
+      "quarter": "2025-04-01",
+      "observation_count": 1
+    }
+  ]
+}

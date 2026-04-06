@@ -1,0 +1,21 @@
+species,rank,hex_id,predicted_intensity,habitat_context,name,road_dist_m,water_name,water_dist_m,park_name,park_dist_m,REGION_N
+monkeys,1,hex_01090,0.5068693000993797,urban,Ubi Road 1,117,Pelton Canal,491,PAYA LEBAR ROAD PARK,572,CENTRAL REGION
+monkeys,2,hex_00949,0.43766273563177355,urban,Queen Street,15,Stamford Canal,442,FARQUHAR GARDEN (FCP),460,CENTRAL REGION
+monkeys,3,hex_00951,0.40185415142262493,urban,Owen Road,12,Kent Road drain,232,CITY GREEN,404,CENTRAL REGION
+monkeys,4,hex_00759,0.38837044538602156,urban,Leng Kee Road,12,Alexandra Canal,400,RAIL CORRIDOR,750,CENTRAL REGION
+monkeys,5,hex_01107,0.386656993069804,urban,Ubi Avenue 1,85,Geylang Canal,918,JLN EUNOS INTERIM PK,670,CENTRAL REGION
+monkeys,6,hex_00791,0.37935485335448244,urban,Nassim Hill,36,Stamford Canal,342,SBG LC ZONE 1 (TNC),148,CENTRAL REGION
+monkeys,7,hex_01262,0.3725961315330416,urban,Changi Business Park Avenue 3,2,Sungei Mata Ikan,569,SUNBIRD CIRCLE PG,1132,EAST REGION
+monkeys,8,hex_00757,0.36808458755517826,urban,Telok Blangah Heights,133,Bukit Chermin Canal,550,TELOK BLANGAH HILL PARK,155,CENTRAL REGION
+monkeys,9,hex_00950,0.35435264936334215,urban,Upper Dickson Road,5,Rochor Canal,253,ROWELL RD OS,315,CENTRAL REGION
+monkeys,10,hex_01115,0.35089535968101365,urban,Compassvale Walk,43,Sungei Punggol,1847,ST ANNE'S WOOD PG,519,NORTH-EAST REGION
+otters,1,hex_00926,0.19731612316031186,urban,Ang Mo Kio Avenue 1,101,Kallang River,349,BISHAN-ANG MO KIO PARK (RIVER PLAINS),129,NORTH-EAST REGION
+otters,2,hex_01072,0.1949270257599458,urban,Playfair Road,26,Pelton Canal,205,PAYA LEBAR ROAD PARK,205,CENTRAL REGION
+otters,3,hex_00889,0.17696090320084729,urban,Thomson Road,35,Bukit Timah 2nd Diversion Canal,194,NOVENA RISE PK,643,CENTRAL REGION
+otters,4,hex_01202,0.16905553346471713,urban,East Coast Park Service Road,5,Bayshore Drain,93,EAST COAST PARK AREA F,3,EAST REGION
+otters,5,hex_01076,0.16258117661041752,urban,Lim Ah Pin Road,48,Sungei Tongkang,1923,REALTY PARK,495,NORTH-EAST REGION
+otters,6,hex_00890,0.16120621135466903,urban,Toa Payoh Rise,25,Bukit Timah 2nd Diversion Canal,999,MACRITCHIE RESERVOIR PK,628,CENTRAL REGION
+otters,7,hex_01172,0.15899905018140137,urban,Bedok North Avenue 1,0,Siglap Linear Park Drain,482,SIGLAP LINEAR PK (JLN B'WAN-UPP EC RD),562,EAST REGION
+otters,8,hex_01203,0.15872536639359427,urban,Lucky Crescent,9,Bayshore Drain,378,SENNETT AVE OS,118,EAST REGION
+otters,9,hex_01094,0.15542204711272753,urban,Hougang Avenue 3,8,Pelton Canal,2668,REALTY PARK,646,NORTH-EAST REGION
+otters,10,hex_01262,0.1519857747113969,urban,Changi Business Park Avenue 3,2,Sungei Mata Ikan,569,SUNBIRD CIRCLE PG,1132,EAST REGION
