@@ -37,7 +37,7 @@ These locations are translated into human-readable form using the nearest named 
 | 9 | `hex_01094` | 0.155422 | urban | North-East Region | Hougang Avenue 3 | 8 | Pelton Canal | 2668 | REALTY PARK | 646 |
 | 10 | `hex_01262` | 0.151986 | urban | East Region | Changi Business Park Avenue 3 | 2 | Sungei Mata Ikan | 569 | SUNBIRD CIRCLE PG | 1132 |
 
-## English Discussion
+## Discussion
 This figure demonstrates the value of moving from binary occurrence mapping to group-level intensity forecasting. Instead of asking only whether monkeys or otters may occur in a given cell, the model identifies where their presence is likely to be more concentrated in the next quarter. This makes it possible to identify future presence hotspots rather than only mapping broad potential distribution.
 
 The realized-environment results suggest that future high-intensity activity is not limited to natural-core habitat. For both monkeys and otters, the top predicted cells are concentrated in urban or urban-edge settings, often close to named roads, canals, drains, managed park spaces, and built-up areas. Because this rerun incorporates both buildings and subzone population, the urban-context interpretation is now stronger than in the earlier proxy-only version. The pattern indicates that future wildlife presence is likely to be concentrated at the urban-natural interface rather than being restricted to a strict city-versus-reserve divide. In practical terms, the model helps identify where ecological monitoring and urban wildlife management may be most needed in the near future.
