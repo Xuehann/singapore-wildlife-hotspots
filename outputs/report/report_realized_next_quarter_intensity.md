@@ -1,6 +1,5 @@
 # Future Wildlife Presence Hotspots Under Realized Environment
 
-![Future Wildlife Presence Intensity]
 (https://github.com/Xuehann/singapore-wildlife-hotspots/blob/main/outputs/report/figure_realized_next_quarter_intensity.png))
 
 ## Figure Caption
